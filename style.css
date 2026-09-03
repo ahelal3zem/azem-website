@@ -1,0 +1,800 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Cairo", Arial, sans-serif;
+}
+
+
+/* =========================
+   الصفحة
+========================= */
+
+body{
+
+    background:#ffffff;
+
+    color:#17233c;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    position:relative;
+
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   زخارف خلفية ناعمة
+========================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:350px;
+    height:350px;
+
+    left:-180px;
+    top:250px;
+
+    background:rgba(93,15,15,.055);
+
+    border-radius:50%;
+
+    filter:blur(70px);
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:350px;
+    height:350px;
+
+    right:-180px;
+    bottom:150px;
+
+    background:rgba(23,35,60,.07);
+
+    border-radius:50%;
+
+    filter:blur(70px);
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+
+/* =========================
+   الهيدر
+========================= */
+
+header{
+
+    background:#17233c;
+
+    color:white;
+
+    min-height:115px;
+
+    padding:20px 30px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:10;
+
+    border-bottom:4px solid #5d0f0f;
+
+    box-shadow:
+        0 5px 20px rgba(23,35,60,.20);
+}
+
+
+/* =========================
+   الشعار
+========================= */
+
+.logo{
+
+    position:absolute;
+
+    right:25px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:75px;
+
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:3;
+}
+
+
+.logo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+}
+
+
+/* =========================
+   عنوان الموقع
+========================= */
+
+.header-title{
+
+    text-align:center;
+}
+
+
+.header-title h1{
+
+    font-size:30px;
+
+    margin-bottom:4px;
+
+    font-weight:700;
+}
+
+
+.header-title p{
+
+    font-size:14px;
+
+    opacity:.85;
+}
+
+
+/* =========================
+   أزرار الشريط العلوي
+========================= */
+
+.navbar{
+
+    position:absolute;
+
+    left:30px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    display:flex;
+
+    gap:9px;
+}
+
+
+.navbar a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:9px 14px;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
+    font-size:14px;
+
+    transition:.3s;
+
+    white-space:nowrap;
+}
+
+
+.navbar a:hover{
+
+    background:#5d0f0f;
+
+    border-color:#5d0f0f;
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   المحتوى
+========================= */
+
+main{
+
+    width:92%;
+
+    max-width:1250px;
+
+    margin:45px auto;
+
+    flex:1;
+
+    position:relative;
+
+    z-index:1;
+}
+
+
+/* =========================
+   عنوان اختر الكلية
+========================= */
+
+.section-title{
+
+    text-align:center;
+
+    font-size:28px;
+
+    color:#17233c;
+
+    margin-bottom:32px;
+}
+
+
+.section-title::after{
+
+    content:"";
+
+    display:block;
+
+    width:70px;
+
+    height:3px;
+
+    background:#5d0f0f;
+
+    border-radius:10px;
+
+    margin:12px auto 0;
+}
+
+
+/* =========================
+   شبكة الكليات
+========================= */
+
+.colleges{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    width:100%;
+}
+
+
+/* =========================
+   البطاقة
+========================= */
+
+.card{
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+    border:1px solid rgba(23,35,60,.14);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    position:relative;
+
+    box-shadow:
+        0 6px 20px rgba(23,35,60,.10);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+
+/* الخط الخمري */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    right:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:#5d0f0f;
+
+    z-index:2;
+}
+
+
+/* لمعة الزجاج */
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:110px;
+
+    height:110px;
+
+    left:-55px;
+
+    top:-55px;
+
+    background:rgba(255,255,255,.45);
+
+    border-radius:50%;
+
+    filter:blur(20px);
+
+    pointer-events:none;
+}
+
+
+/* =========================
+   Hover
+========================= */
+
+.card:hover{
+
+    transform:translateY(-7px);
+
+    border-color:#5d0f0f;
+
+    box-shadow:
+        0 14px 30px rgba(23,35,60,.18);
+}
+
+
+/* =========================
+   الصور
+========================= */
+
+.card img{
+
+    width:100%;
+
+    height:170px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.4s;
+}
+
+
+.card:hover img{
+
+    transform:scale(1.03);
+}
+
+
+/* =========================
+   اسم الكلية
+========================= */
+
+.card h3{
+
+    min-height:65px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:12px 8px;
+
+    text-align:center;
+
+    color:#17233c;
+
+    font-size:17px;
+
+    line-height:1.5;
+
+    font-weight:600;
+}
+
+
+.card:hover h3{
+
+    color:#5d0f0f;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+footer{
+
+    width:100%;
+
+    background:#17233c;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px 15px;
+
+    border-top:4px solid #5d0f0f;
+
+    margin-top:auto;
+
+    position:relative;
+
+    z-index:5;
+}
+
+
+/* =========================
+   العبارة
+========================= */
+
+.footer-quote{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+.footer-quote span{
+
+    font-family:
+        "Amiri",
+        "Noto Naskh Arabic",
+        "Traditional Arabic",
+        serif;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   زخرفة الكتاب
+========================= */
+
+.book-decoration{
+
+    width:25px;
+
+    height:18px;
+
+    margin-bottom:4px;
+
+    opacity:.9;
+}
+
+
+.book-decoration svg{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+}
+
+
+/* =========================
+   روابط التواصل
+========================= */
+
+.social-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:12px;
+}
+
+
+.social-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    padding:7px 13px;
+
+    border-radius:9px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.20);
+
+    transition:.3s;
+}
+
+
+.social-links a:hover{
+
+    background:#5d0f0f;
+
+    border-color:#5d0f0f;
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   التابلت
+========================= */
+
+@media(max-width:1000px){
+
+    .colleges{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .navbar{
+
+        left:15px;
+
+        gap:6px;
+    }
+
+
+    .navbar a{
+
+        padding:8px 10px;
+
+        font-size:13px;
+    }
+
+}
+
+
+/* =========================
+   الهاتف
+========================= */
+
+@media(max-width:600px){
+
+    header{
+
+        min-height:auto;
+
+        padding:18px 15px 20px;
+
+        flex-direction:column;
+
+        gap:12px;
+    }
+
+
+    .logo{
+
+        position:static;
+
+        transform:none;
+
+        width:58px;
+
+        height:58px;
+
+        margin:auto;
+    }
+
+
+    .header-title h1{
+
+        font-size:23px;
+    }
+
+
+    .header-title p{
+
+        font-size:13px;
+    }
+
+
+    .navbar{
+
+        position:static;
+
+        transform:none;
+
+        width:100%;
+
+        display:grid;
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:8px;
+    }
+
+
+    .navbar a{
+
+        text-align:center;
+
+        padding:9px 5px;
+
+        font-size:13px;
+    }
+
+
+    main{
+
+        width:90%;
+
+        margin:30px auto;
+    }
+
+
+    .section-title{
+
+        font-size:24px;
+
+        margin-bottom:25px;
+    }
+
+
+    .colleges{
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+    }
+
+
+    .card img{
+
+        height:190px;
+    }
+
+
+    .card h3{
+
+        min-height:60px;
+
+        font-size:17px;
+    }
+
+
+    footer{
+
+        padding:18px 10px;
+    }
+
+
+    .footer-quote span{
+
+        font-size:18px;
+    }
+
+
+    .social-links{
+
+        gap:7px;
+    }
+
+
+    .social-links a{
+
+        font-size:12px;
+
+        padding:6px 9px;
+    }
+
+}
+
+/* =========================
+   شعار أهل العزم
+========================= */
+
+.logo{
+
+    position:absolute;
+
+    right:25px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:100px;
+
+    height:100px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:3;
+
+}
+
+
+.logo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+}

@@ -1,0 +1,576 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Cairo", Arial, sans-serif;
+}
+
+
+/* =========================
+   الصفحة الأساسية
+========================= */
+
+body{
+
+    background:#ffffff;
+
+    color:#17233c;
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    position:relative;
+
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   خلفية زخرفية خفيفة
+========================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:300px;
+    height:300px;
+
+    left:-150px;
+    top:220px;
+
+    background:rgba(93,15,15,.07);
+
+    border-radius:50%;
+
+    filter:blur(50px);
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:300px;
+    height:300px;
+
+    right:-150px;
+    bottom:100px;
+
+    background:rgba(23,35,60,.08);
+
+    border-radius:50%;
+
+    filter:blur(50px);
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+
+/* =========================
+   الهيدر
+========================= */
+
+header{
+
+    background:#17233c;
+
+    color:white;
+
+    padding:25px 20px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+
+    box-shadow:
+        0 5px 20px rgba(23,35,60,.18);
+
+    border-bottom:3px solid #5d0f0f;
+}
+
+
+header h1{
+
+    margin-top:5px;
+
+    font-size:32px;
+
+    letter-spacing:.5px;
+}
+
+
+/* =========================
+   زر الرجوع - الجهة اليسرى
+========================= */
+
+.back-btn{
+
+    position:absolute;
+
+    left:20px;
+    right:auto;
+
+    top:20px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+    z-index:3;
+}
+
+
+.back-btn:hover{
+
+    background:#5d0f0f;
+
+    border-color:#5d0f0f;
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   المحتوى
+========================= */
+
+main{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:45px auto;
+
+    flex:1;
+
+    position:relative;
+
+    z-index:1;
+}
+
+
+/* =========================
+   شبكة الأزرار
+========================= */
+
+#buttons-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    width:100%;
+}
+
+
+/* =========================
+   أزرار الملخصات
+========================= */
+
+#buttons-container button{
+
+    min-height:75px;
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:18px 22px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(23,35,60,.15);
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    color:#17233c;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 5px 18px rgba(23,35,60,.10);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease,
+        border-color .3s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
+    text-align:right;
+}
+
+
+/* خط خمري صغير أعلى الزر */
+
+#buttons-container button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    right:0;
+
+    width:100%;
+
+    height:3px;
+
+    background:#5d0f0f;
+
+    opacity:.8;
+}
+
+
+/* تأثير الزجاج */
+
+#buttons-container button::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    left:-50px;
+    top:-50px;
+
+    background:rgba(255,255,255,.35);
+
+    border-radius:50%;
+
+    filter:blur(20px);
+
+    pointer-events:none;
+}
+
+
+/* =========================
+   Hover
+========================= */
+
+#buttons-container button:hover{
+
+    transform:translateY(-6px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(93,15,15,.95),
+            rgba(23,35,60,.97)
+        );
+
+    color:white;
+
+    border-color:#5d0f0f;
+
+    box-shadow:
+        0 12px 28px rgba(23,35,60,.22);
+}
+
+
+/* =========================
+   السهم
+========================= */
+
+.arrow{
+
+    font-size:22px;
+
+    color:#5d0f0f;
+
+    transition:.3s;
+
+    flex-shrink:0;
+}
+
+
+#buttons-container button:hover .arrow{
+
+    color:white;
+
+    transform:translateX(-6px);
+}
+
+
+/* =========================
+   اسم الملخص
+========================= */
+
+#buttons-container button span:first-child{
+
+    line-height:1.6;
+}
+
+
+/* =========================
+   تأثير الضغط
+========================= */
+
+#buttons-container button:active{
+
+    transform:translateY(-2px) scale(.98);
+}
+
+
+/* =========================
+   الشريط السفلي
+========================= */
+
+.quote-bar{
+
+    width:100%;
+
+    margin-top:auto;
+
+    padding:22px 20px;
+
+    background:#17233c;
+
+    color:white;
+
+    text-align:center;
+
+    border-top:3px solid #5d0f0f;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* =========================
+   زخرفة الكتاب الصغيرة
+========================= */
+
+.book-decoration{
+
+    width:28px;
+
+    height:20px;
+
+    margin:0 auto 5px;
+
+    opacity:.9;
+}
+
+
+.book-decoration svg{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+}
+
+
+.quote-bar span{
+
+    font-family:"Amiri","Noto Naskh Arabic","Traditional Arabic",serif;
+
+    font-size:21px;
+
+    font-weight:600;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   الأجهزة اللوحية
+========================= */
+
+@media(max-width:900px){
+
+    #buttons-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:20px;
+    }
+
+}
+
+
+/* =========================
+   الهواتف
+========================= */
+
+@media(max-width:600px){
+
+    header{
+
+        padding:65px 20px 22px;
+    }
+
+
+    header h1{
+
+        font-size:24px;
+
+        line-height:1.5;
+    }
+
+
+    .back-btn{
+
+        position:static;
+
+        display:inline-block;
+
+        margin-bottom:10px;
+
+        padding:9px 16px;
+    }
+
+
+    main{
+
+        width:90%;
+
+        margin:30px auto;
+    }
+
+
+    #buttons-container{
+
+        grid-template-columns:1fr;
+
+        gap:16px;
+    }
+
+
+    #buttons-container button{
+
+        min-height:65px;
+
+        padding:16px 18px;
+
+        font-size:16px;
+
+        border-radius:14px;
+    }
+
+
+    .arrow{
+
+        font-size:20px;
+    }
+
+
+    .quote-bar{
+
+        padding:18px 10px;
+    }
+
+
+    .quote-bar span{
+
+        font-size:18px;
+    }
+
+
+    .book-decoration{
+
+        width:24px;
+
+        height:18px;
+    }
+
+}
+
+
+/* =========================
+   شعار أهل العزم
+========================= */
+
+.logo{
+
+    position:absolute;
+
+    right:25px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:95px;
+
+    height:95px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:3;
+
+}
+
+
+.logo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+}
+

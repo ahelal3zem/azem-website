@@ -1,0 +1,556 @@
+/* =========================================
+   الإعدادات العامة
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cairo", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+
+    color: #17233c;
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+
+/* =========================================
+   العلامة المائية - أعلى اليسار
+   ========================================= */
+
+body::before{
+    content:"";
+
+    position:fixed;
+
+    left:10px;
+    top:100px;
+
+    width:270px;
+    height:270px;
+    rotate: calc(-7deg);
+
+    background-image:url("https://i.ibb.co/CsY47J2r/Gemini-Generated-Image-arw09marw09marw0.jpg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+
+    opacity:0.20;
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+body::after{
+    content:"";
+
+    position:fixed;
+
+    right:-25px;
+    top:500px;
+
+    width:300px;
+    height:300px;
+
+    background-image:url("https://i.ibb.co/4nM7jwPr/360-F-1632336263-51bps-ARrp-Io4-Qi-U6-Fc-P5-F9-LTZb-NDGNi5.jpg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+
+    opacity:0.30;
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+/* =========================================
+   الهيدر
+   ========================================= */
+
+header {
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 145px;
+
+    padding: 25px 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #17233c;
+
+    color: white;
+
+    border-bottom: 4px solid #5d0f0f;
+
+    box-shadow:
+        0 8px 25px rgba(23, 35, 60, 0.18);
+}
+
+
+/* =========================================
+   عنوان الصفحة
+   ========================================= */
+
+header h1 {
+    font-size: 32px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================
+   زر الرجوع
+   ========================================= */
+
+header button {
+    position: absolute;
+
+    left: 25px;
+    top: 25px;
+
+    padding: 10px 18px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+header button:hover {
+    background: #5d0f0f;
+
+    border-color: #5d0f0f;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   الشعار
+   ========================================= */
+
+.logo {
+    position: absolute;
+
+    right: 25px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 125px;
+    height: 125px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 3;
+}
+
+
+.logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================
+   منطقة الأزرار
+   ========================================= */
+
+.buttons {
+    position: relative;
+
+    z-index: 1;
+
+    width: 90%;
+
+    max-width: 1050px;
+
+    margin: 55px auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================================
+   أزرار الأقسام
+   ========================================= */
+
+.buttons button {
+    position: relative;
+
+    min-height: 180px;
+
+    padding: 30px 20px;
+
+    border: 1px solid rgba(93, 15, 15, 0.20);
+
+    border-top: 4px solid #5d0f0f;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.88),
+            rgba(245, 242, 242, 0.68)
+        );
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    color: #17233c;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(23, 35, 60, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   دائرة زخرفية داخل الزر
+   ========================================= */
+
+.buttons button::before {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    right: -55px;
+    top: -55px;
+
+    border-radius: 50%;
+
+    background: rgba(93, 15, 15, 0.08);
+
+    transition: 0.4s ease;
+}
+
+
+/* =========================================
+   لمعة زجاجية
+   ========================================= */
+
+.buttons button::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    left: -110px;
+    bottom: -110px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    filter: blur(20px);
+
+    transition: 0.5s ease;
+}
+
+
+/* =========================================
+   Hover
+   ========================================= */
+
+.buttons button:hover {
+
+    transform: translateY(-8px);
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17233c,
+            #5d0f0f
+        );
+
+    border-color: #5d0f0f;
+
+    box-shadow:
+        0 20px 45px rgba(23, 35, 60, 0.22);
+}
+
+
+.buttons button:hover::before {
+    transform: scale(1.7);
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+.buttons button:hover::after {
+    transform: scale(1.5);
+
+    left: 40%;
+}
+
+
+/* =========================================
+   عند الضغط
+   ========================================= */
+
+.buttons button:active {
+    transform: translateY(-3px) scale(0.98);
+}
+
+
+/* =========================================
+   الفوتر
+   ========================================= */
+
+.quote-bar {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 22px 20px;
+
+    background: #17233c;
+
+    color: white;
+
+    text-align: center;
+
+    border-top: 4px solid #5d0f0f;
+}
+
+
+/* =========================================
+   الكتاب
+   ========================================= */
+
+.book-decoration {
+    width: 35px;
+    height: 25px;
+
+    margin: 0 auto 5px;
+
+    opacity: 0.9;
+}
+
+
+.book-decoration svg {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+
+/* =========================================
+   عبارة الفوتر
+   ========================================= */
+
+.quote-bar span {
+    font-family:
+        "Amiri",
+        "Noto Naskh Arabic",
+        "Traditional Arabic",
+        serif;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   زخرفة أسفل العبارة
+   ========================================= */
+
+.quote-bar::after {
+    content: "✒──────────────";
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #5d0f0f;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   الأجهزة اللوحية
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .buttons {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 20px;
+
+        margin-top: 40px;
+    }
+
+}
+
+
+/* =========================================
+   الهواتف
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    header {
+        min-height: 150px;
+
+        padding:
+            70px 20px
+            25px;
+    }
+
+
+    header h1 {
+        font-size: 23px;
+
+        line-height: 1.5;
+    }
+
+
+    header button {
+        left: 15px;
+        top: 15px;
+
+        padding: 8px 14px;
+
+        font-size: 13px;
+    }
+
+
+    .logo {
+        width: 55px;
+        height: 55px;
+
+        right: 12px;
+        top: 15px;
+
+        transform: none;
+    }
+
+
+    .buttons {
+        width: 88%;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        margin: 35px auto;
+    }
+
+
+    .buttons button {
+        min-height: 125px;
+
+        font-size: 19px;
+
+        border-radius: 20px;
+    }
+
+
+    .quote-bar {
+        padding: 18px 15px;
+    }
+
+
+    .quote-bar span {
+        font-size: 17px;
+    }
+
+
+    body::before {
+        width: 200px;
+        height: 200px;
+
+        left: -80px;
+        top: 180px;
+    }
+
+
+    body::after {
+        width: 350px;
+        height: 350px;
+
+        bottom: -100px;
+    }
+
+}

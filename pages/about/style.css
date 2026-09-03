@@ -1,0 +1,1282 @@
+/* =====================================================
+   الإعدادات الأساسية
+===================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    font-family:"Cairo", Arial, sans-serif;
+
+    background:#ffffff;
+
+    color:#17233c;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+}
+
+
+/* =====================================================
+   زخارف الخلفية
+===================================================== */
+
+.bg-shape{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    filter:blur(70px);
+
+}
+
+
+.shape-one{
+
+    width:320px;
+
+    height:320px;
+
+    background:rgba(93,15,15,.08);
+
+    left:-170px;
+
+    top:260px;
+
+}
+
+
+.shape-two{
+
+    width:350px;
+
+    height:350px;
+
+    background:rgba(23,35,60,.08);
+
+    right:-180px;
+
+    top:420px;
+
+}
+
+
+.shape-three{
+
+    width:250px;
+
+    height:250px;
+
+    background:rgba(93,15,15,.05);
+
+    right:20%;
+
+    bottom:-130px;
+
+}
+
+
+/* =====================================================
+   الهيدر
+===================================================== */
+
+header{
+
+    width:100%;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #17233c 0%,
+
+            #1b2947 55%,
+
+            #17233c 100%
+
+        );
+
+    color:white;
+
+    padding:30px 30px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:5;
+
+    border-bottom:4px solid #5d0f0f;
+
+    box-shadow:
+
+        0 8px 30px rgba(23,35,60,.20);
+
+    overflow:hidden;
+
+}
+
+
+/* لمعة داخل الهيدر */
+
+header::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.035);
+
+    left:-180px;
+
+    top:-300px;
+
+}
+
+
+/* =====================================================
+   محتوى الهيدر
+===================================================== */
+
+.header-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+.small-title{
+
+    display:block;
+
+    font-size:14px;
+
+    color:rgba(255,255,255,.72);
+
+    margin-bottom:3px;
+
+}
+
+
+header h1{
+
+    font-family:"Amiri", serif;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin:0;
+
+    letter-spacing:.5px;
+
+}
+
+
+.header-line{
+
+    width:55px;
+
+    height:3px;
+
+    background:#5d0f0f;
+
+    margin:8px auto 0;
+
+    border-radius:10px;
+
+}
+
+
+/* =====================================================
+   الشعار
+===================================================== */
+
+.logo{
+
+    position:absolute;
+
+    right:25px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:72px;
+
+    height:72px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:5;
+
+}
+
+
+.logo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+}
+
+
+/* =====================================================
+   زر الرئيسية
+===================================================== */
+
+.back-btn{
+
+    position:absolute;
+
+    left:25px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    padding:10px 20px;
+
+    border-radius:11px;
+
+    border:1px solid rgba(255,255,255,.28);
+
+    background:rgba(255,255,255,.09);
+
+    color:white;
+
+    font-family:"Cairo", Arial, sans-serif;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    transition:.3s ease;
+
+    z-index:5;
+
+}
+
+
+.back-btn:hover{
+
+    background:#5d0f0f;
+
+    border-color:#5d0f0f;
+
+    transform:translateY(-50%) translateY(-3px);
+
+    box-shadow:
+
+        0 8px 20px rgba(93,15,15,.30);
+
+}
+
+
+/* =====================================================
+   المحتوى الرئيسي
+===================================================== */
+
+main{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:55px auto 60px;
+
+    flex:1;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/* =====================================================
+   البطاقة الرئيسية
+===================================================== */
+
+.hero-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:55px 65px;
+
+    margin-bottom:30px;
+
+    border-radius:25px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(255,255,255,.82),
+
+            rgba(255,255,255,.60)
+
+        );
+
+    border:1px solid rgba(23,35,60,.13);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+
+        0 15px 40px rgba(23,35,60,.10);
+
+}
+
+
+/* خط جانبي */
+
+.hero-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+
+    top:0;
+
+    width:5px;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+
+            to bottom,
+
+            #5d0f0f,
+
+            #17233c
+
+        );
+
+}
+
+
+/* دائرة زخرفية */
+
+.hero-decoration{
+
+    position:absolute;
+
+    width:230px;
+
+    height:230px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(93,15,15,.12);
+
+    left:-70px;
+
+    bottom:-100px;
+
+}
+
+
+.hero-decoration::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(23,35,60,.12);
+
+    left:35px;
+
+    top:35px;
+
+}
+
+
+.hero-content{
+
+    max-width:850px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+.section-label{
+
+    display:inline-block;
+
+    color:#5d0f0f;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    margin-bottom:7px;
+
+    letter-spacing:.5px;
+
+}
+
+
+.hero-card h2{
+
+    font-family:"Amiri", serif;
+
+    font-size:36px;
+
+    color:#17233c;
+
+    margin-bottom:12px;
+
+}
+
+
+.hero-card p{
+
+    font-size:18px;
+
+    line-height:2.1;
+
+    color:#414141;
+
+}
+
+
+/* =====================================================
+   الرؤية والرسالة
+===================================================== */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    margin-bottom:30px;
+
+}
+
+
+.info-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    min-height:250px;
+
+    padding:35px;
+
+    border-radius:22px;
+
+    background:
+
+        rgba(255,255,255,.68);
+
+    backdrop-filter:blur(16px);
+
+    -webkit-backdrop-filter:blur(16px);
+
+    border:1px solid rgba(23,35,60,.13);
+
+    box-shadow:
+
+        0 10px 30px rgba(23,35,60,.08);
+
+    transition:.35s ease;
+
+}
+
+
+/* الدائرة الخلفية */
+
+.info-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    left:-90px;
+
+    bottom:-100px;
+
+    background:rgba(23,35,60,.035);
+
+    transition:.4s ease;
+
+}
+
+
+.info-card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+
+        0 18px 40px rgba(23,35,60,.13);
+
+}
+
+
+.info-card:hover::after{
+
+    transform:scale(1.2);
+
+}
+
+
+/* رقم البطاقة */
+
+.card-number{
+
+    font-family:"Amiri", serif;
+
+    font-size:17px;
+
+    color:#5d0f0f;
+
+    opacity:.75;
+
+    margin-bottom:5px;
+
+}
+
+
+.card-line{
+
+    width:40px;
+
+    height:3px;
+
+    border-radius:10px;
+
+    background:#5d0f0f;
+
+    margin-bottom:18px;
+
+}
+
+
+.info-card h2{
+
+    font-family:"Amiri", serif;
+
+    font-size:29px;
+
+    color:#17233c;
+
+    margin-bottom:10px;
+
+}
+
+
+.info-card p{
+
+    color:#454545;
+
+    font-size:16px;
+
+    line-height:2;
+
+}
+
+
+/* =====================================================
+   بطاقة الأهداف
+===================================================== */
+
+.goals-card{
+
+    position:relative;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(23,35,60,.97),
+
+            rgba(27,41,71,.96)
+
+        );
+
+    color:white;
+
+    box-shadow:
+
+        0 15px 40px rgba(23,35,60,.18);
+
+    overflow:hidden;
+
+}
+
+
+/* زخرفة الأهداف */
+
+.goals-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    left:-150px;
+
+    top:-140px;
+
+}
+
+
+.goals-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    right:-110px;
+
+    bottom:-120px;
+
+}
+
+
+/* عنوان الأهداف */
+
+.goals-heading{
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+
+    margin-bottom:30px;
+
+}
+
+
+.goals-heading .section-label{
+
+    color:#d5a3a3;
+
+}
+
+
+.goals-heading h2{
+
+    font-family:"Amiri", serif;
+
+    font-size:34px;
+
+}
+
+
+.heading-line{
+
+    width:55px;
+
+    height:3px;
+
+    background:#5d0f0f;
+
+    margin:8px auto 0;
+
+    border-radius:10px;
+
+}
+
+
+/* =====================================================
+   قائمة الأهداف
+===================================================== */
+
+.goals-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+.goal{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    padding:18px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s ease;
+
+}
+
+
+.goal:hover{
+
+    background:rgba(255,255,255,.10);
+
+    transform:translateY(-3px);
+
+}
+
+
+.goal-number{
+
+    flex-shrink:0;
+
+    width:35px;
+
+    height:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#5d0f0f;
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+
+.goal p{
+
+    font-size:14px;
+
+    line-height:1.9;
+
+    color:rgba(255,255,255,.87);
+
+}
+
+
+/* الهدف الأخير بعرض كامل */
+
+.goal:last-child{
+
+    grid-column:1 / -1;
+
+}
+
+
+/* =====================================================
+   الفوتر
+===================================================== */
+
+footer{
+
+    position:relative;
+
+    z-index:3;
+
+    width:100%;
+
+    padding:25px 20px;
+
+    text-align:center;
+
+    background:#17233c;
+
+    color:white;
+
+    border-top:4px solid #5d0f0f;
+
+}
+
+
+/* زخرفة الفوتر */
+
+.footer-decoration{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    margin-bottom:8px;
+
+}
+
+
+.footer-decoration span{
+
+    display:block;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:#5d0f0f;
+
+}
+
+
+.footer-decoration span:nth-child(2){
+
+    width:9px;
+
+    height:9px;
+
+}
+
+
+footer p{
+
+    font-family:"Amiri", serif;
+
+    font-size:23px;
+
+    line-height:1.5;
+
+}
+
+
+.footer-line{
+
+    width:45px;
+
+    height:2px;
+
+    background:rgba(255,255,255,.3);
+
+    margin:8px auto;
+
+}
+
+
+footer small{
+
+    color:rgba(255,255,255,.65);
+
+    font-size:12px;
+
+}
+
+
+/* =====================================================
+   الأجهزة اللوحية
+===================================================== */
+
+@media(max-width:900px){
+
+    main{
+
+        width:90%;
+
+    }
+
+
+    .hero-card{
+
+        padding:45px;
+
+    }
+
+
+    .info-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+
+    .goals-list{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .goal:last-child{
+
+        grid-column:auto;
+
+    }
+
+}
+
+
+/* =====================================================
+   الهاتف
+===================================================== */
+
+@media(max-width:600px){
+
+    header{
+
+        padding:75px 20px 25px;
+
+    }
+
+
+    header h1{
+
+        font-size:32px;
+
+    }
+
+
+    .small-title{
+
+        font-size:12px;
+
+    }
+
+
+    /* الشعار */
+
+    .logo{
+
+        width:48px;
+
+        height:48px;
+
+        right:15px;
+
+        top:20px;
+
+        transform:none;
+
+    }
+
+
+    /* زر الرئيسية */
+
+    .back-btn{
+
+        left:15px;
+
+        top:20px;
+
+        transform:none;
+
+        padding:8px 13px;
+
+        font-size:13px;
+
+    }
+
+
+    .back-btn:hover{
+
+        transform:translateY(-2px);
+
+    }
+
+
+    main{
+
+        width:92%;
+
+        margin:30px auto 40px;
+
+    }
+
+
+    /* البطاقة الرئيسية */
+
+    .hero-card{
+
+        padding:32px 25px;
+
+        border-radius:20px;
+
+    }
+
+
+    .hero-card h2{
+
+        font-size:30px;
+
+    }
+
+
+    .hero-card p{
+
+        font-size:15px;
+
+        line-height:2;
+
+    }
+
+
+    /* الرؤية والرسالة */
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+
+    }
+
+
+    .info-card{
+
+        min-height:auto;
+
+        padding:28px 25px;
+
+    }
+
+
+    .info-card h2{
+
+        font-size:27px;
+
+    }
+
+
+    .info-card p{
+
+        font-size:15px;
+
+    }
+
+
+    /* الأهداف */
+
+    .goals-card{
+
+        padding:30px 18px;
+
+        border-radius:20px;
+
+    }
+
+
+    .goals-heading h2{
+
+        font-size:30px;
+
+    }
+
+
+    .goal{
+
+        padding:15px 12px;
+
+        gap:12px;
+
+    }
+
+
+    .goal p{
+
+        font-size:13px;
+
+    }
+
+
+    /* الفوتر */
+
+    footer{
+
+        padding:20px 15px;
+
+    }
+
+
+    footer p{
+
+        font-size:20px;
+
+    }
+
+
+    /* تصغير الزخارف */
+
+    .shape-one{
+
+        width:200px;
+
+        height:200px;
+
+    }
+
+
+    .shape-two{
+
+        width:220px;
+
+        height:220px;
+
+    }
+
+
+    .shape-three{
+
+        width:180px;
+
+        height:180px;
+
+    }
+
+}
+
+/* =========================
+   شعار أهل العزم
+========================= */
+
+.logo{
+
+    position:absolute;
+
+    right:25px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:150px;
+
+    height:150px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:3;
+
+}
+
+
+.logo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+}

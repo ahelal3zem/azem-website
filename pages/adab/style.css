@@ -1,0 +1,698 @@
+/* =========================================
+   الإعدادات الأساسية
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Cairo", Arial, sans-serif;
+}
+
+
+/* =========================================
+   الصفحة الأساسية
+========================================= */
+
+body{
+
+    background:
+
+        radial-gradient(
+            circle at 5% 25%,
+            rgba(93,15,15,0.055),
+            transparent 23%
+        ),
+
+        radial-gradient(
+            circle at 95% 70%,
+            rgba(23,35,60,0.065),
+            transparent 25%
+        ),
+
+        #ffffff;
+
+    color:#222;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================================
+   العلامات المائية
+   خاصة بكلية الآداب
+========================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    left: -120px;
+    top: 150px;
+    width: 620px;
+    height: 620px;
+
+    background-image: url("https://i.ibb.co/sv05Fjjf/png-clipart-drawing-book-drawing-books-angle-rectangle.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* العلامة المائية الثانية */
+
+body::after {
+    content: "";
+    position: fixed;
+    right: -120px;
+    top: 300;  
+    width: 620px;
+    height: 620px;
+
+    background-image: url("https://i.ibb.co/9HzF1m5Z/Gemini-Generated-Image-wxfmqowxfmqowxfm-1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0.20;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* =========================================
+   الهيدر
+========================================= */
+
+header{
+
+    background:#17233c;
+
+    color:white;
+
+    padding:25px 20px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+
+    box-shadow:
+
+        0 4px 15px rgba(23,35,60,0.16);
+
+}
+
+
+/* خط خمري صغير أسفل الهيدر */
+
+header::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:3px;
+
+    background:#5d0f0f;
+
+}
+
+
+header h1{
+
+    margin-top:10px;
+
+    font-size:32px;
+
+    letter-spacing:.5px;
+
+}
+
+
+/* =========================================
+   زر الرئيسية
+========================================= */
+
+header button{
+
+    position:absolute;
+
+    left:20px;
+
+    top:20px;
+
+    background:white;
+
+    color:#17233c;
+
+    border:1px solid rgba(255,255,255,0.7);
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+
+    z-index:3;
+
+}
+
+
+header button:hover{
+
+    background:#5d0f0f;
+
+    color:white;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+        0 5px 15px rgba(0,0,0,0.18);
+
+}
+
+
+/* =========================================
+   البطاقات
+========================================= */
+
+.cards{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+
+/* =========================================
+   البطاقة - Glassmorphism
+========================================= */
+
+.card{
+
+    background:rgba(255,255,255,0.58);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    border:1px solid rgba(255,255,255,0.85);
+
+    box-shadow:
+
+        0 5px 15px rgba(23,35,60,0.10);
+
+    transition:
+
+        transform .35s ease,
+
+        box-shadow .35s ease,
+
+        border-color .35s ease;
+
+    position:relative;
+
+}
+
+
+/* =========================================
+   الخط الخمري أعلى البطاقة
+========================================= */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:#5d0f0f;
+
+    z-index:3;
+
+}
+
+
+/* =========================================
+   لمعة Glass عند المرور
+========================================= */
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.28),
+            transparent
+        );
+
+    transform:skewX(-20deg);
+
+    transition:left .7s ease;
+
+    pointer-events:none;
+
+    z-index:2;
+
+}
+
+
+.card:hover::after{
+
+    left:140%;
+
+}
+
+
+/* =========================================
+   تأثير المرور
+========================================= */
+
+.card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+
+        0 15px 30px rgba(23,35,60,0.16),
+
+        0 4px 12px rgba(93,15,15,0.08);
+
+    border-color:rgba(93,15,15,0.28);
+
+}
+
+
+/* =========================================
+   صور البطاقات
+========================================= */
+
+.card img{
+
+    width:100%;
+
+    height:190px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:transform .4s ease;
+
+}
+
+
+/* تكبير خفيف للصورة عند المرور */
+
+.card:hover img{
+
+    transform:scale(1.025);
+
+}
+
+
+/* =========================================
+   اسم القسم
+========================================= */
+
+.card h3{
+
+    padding:18px;
+
+    text-align:center;
+
+    color:#17233c;
+
+    font-size:20px;
+
+    position:relative;
+
+    z-index:3;
+
+}
+
+
+/* =========================================
+   خط زخرفي تحت اسم القسم
+========================================= */
+
+.card h3::after{
+
+    content:"";
+
+    display:block;
+
+    width:42px;
+
+    height:2px;
+
+    background:#5d0f0f;
+
+    margin:10px auto 0;
+
+    border-radius:5px;
+
+    transition:.3s ease;
+
+}
+
+
+.card:hover h3::after{
+
+    width:70px;
+
+}
+
+
+/* =========================================
+   الأجهزة اللوحية
+========================================= */
+
+@media(max-width:900px){
+
+    .cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+/* =========================================
+   الهواتف
+========================================= */
+
+@media(max-width:600px){
+
+    header{
+
+        padding:70px 20px 25px;
+
+    }
+
+
+    header h1{
+
+        font-size:24px;
+
+    }
+
+
+    header button{
+
+        position:static;
+
+        margin-bottom:15px;
+
+    }
+
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+        width:90%;
+
+        margin-top:35px;
+
+    }
+
+
+    .card img{
+
+        height:200px;
+
+    }
+
+    .logo{
+
+    position:absolute;
+
+    right:15px;
+
+    top:15px;
+
+    transform:none;
+
+    width:40px;
+
+    height:40px;
+
+}
+
+
+    /* العلامة المائية على الهاتف */
+
+    body::before{
+
+        font-size:75px;
+
+        left:5px;
+
+        top:180px;
+
+        opacity:0.04;
+
+    }
+
+
+    body::after{
+
+        font-size:75px;
+
+        right:5px;
+
+        bottom:80px;
+
+        opacity:0.04;
+
+    }
+
+
+    header::after{
+
+        font-size:50px;
+
+    }
+
+
+    .card{
+
+        backdrop-filter:blur(10px);
+
+        -webkit-backdrop-filter:blur(10px);
+
+    }
+
+}
+
+.quote-bar{
+    padding:20px 10px;
+}
+
+.quote-bar span{
+    font-size:20px;
+}
+
+.quote-bar::before{
+    font-size:14px;
+}
+
+.quote-bar::after{
+    font-size:11px;
+}
+
+/* =========================================
+   الشريط السفلي
+========================================= */
+
+.quote-bar{
+
+    width:100%;
+
+    margin-top:auto;
+
+    padding:25px 20px;
+
+    background:#17233c;
+
+    color:white;
+
+    text-align:center;
+
+    border-top:3px solid #5d0f0f;
+
+}
+
+
+/* =========================================
+   العبارة العربية
+========================================= */
+
+.quote-bar{
+
+    width:100%;
+
+    margin-top:auto;
+
+    padding:25px 20px;
+
+    background:#17233c;
+
+    color:white;
+
+    text-align:center;
+
+    border-top:3px solid #5d0f0f;
+
+    position:relative;
+
+}
+
+
+/* الزخرفة تحت العبارة */
+
+.quote-bar::after{
+
+    content:"✒──────────────";
+
+    display:block;
+
+    color:#5d0f0f;
+
+    font-size:14px;
+
+    letter-spacing:3px;
+
+    margin-top:5px;
+
+}
+
+
+.quote-bar span{
+
+    font-family:"Amiri","Noto Naskh Arabic","Traditional Arabic",serif;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    line-height:1.8;
+
+}
+
+.book-decoration{
+    width:30px;
+    height:22px;
+    margin:0 auto 4px;
+    opacity:.85;
+}
+
+.book-decoration svg{
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+/* =========================
+   شعار أهل العزم
+========================= */
+
+.logo{
+
+    position:absolute;
+
+    right:25px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:95px;
+
+    height:95px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:3;
+
+}
+
+
+.logo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+}

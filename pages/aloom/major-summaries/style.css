@@ -1,0 +1,491 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Cairo", Arial, sans-serif;
+}
+
+
+/* =========================
+   الصفحة
+========================= */
+
+body{
+    background:#ffffff;
+    color:#17233c;
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    overflow-x:hidden;
+
+    position:relative;
+}
+
+
+/* =========================================
+   العلامات المائية
+   خاصة بكلية الآداب
+========================================= */
+
+body::before{
+    content:"";
+
+    position:fixed;
+
+    left:-10px;
+    top:330px;
+
+    width:500px;
+    height:500px;
+
+    background-image:url("https://i.ibb.co/93n2RXyN/Gemini-Generated-Image-c1nevlc1nevlc1ne.jpg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+
+    opacity:0.25;
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+body::after{
+    content:"";
+
+    position:fixed;
+
+    right:-10px;
+    top:90px;
+
+    width:300px;
+    height:300px;
+
+    background-image:url("https://i.ibb.co/zV6nMXks/pngtree-teacher-vector-illustration-with-black-and-white-design-teacher-icon-png-image-1996068.jpg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+
+    opacity:0.15;
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+
+
+/* =========================
+   الهيدر
+========================= */
+
+header{
+    background:#17233c;
+
+    color:white;
+
+    padding:25px 20px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+
+    border-bottom:3px solid #5d0f0f;
+
+    box-shadow:
+        0 5px 20px rgba(23,35,60,.18);
+}
+
+
+header h1{
+    font-size:30px;
+
+    line-height:1.5;
+}
+
+
+/* =========================
+   زر الرجوع
+========================= */
+
+header button{
+
+    position:absolute;
+
+    left:20px;
+    top:20px;
+
+    padding:9px 17px;
+
+    border-radius:10px;
+
+    border:1px solid rgba(255,255,255,.30);
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+
+header button:hover{
+
+    background:#5d0f0f;
+
+    border-color:#5d0f0f;
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   أزرار المواد
+========================= */
+
+.buttons{
+
+    width:90%;
+
+    max-width:950px;
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    position:relative;
+
+    z-index:1;
+
+    flex:1;
+}
+
+
+/* =========================
+   شكل الزر
+========================= */
+
+.buttons button{
+
+    width:100%;
+
+    min-height:62px;
+
+    padding:14px 20px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(23,35,60,.15);
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    color:#17233c;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 5px 16px rgba(23,35,60,.09);
+
+    transition:.3s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* الخط الخمري */
+
+.buttons button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    right:0;
+
+    width:100%;
+
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5d0f0f,
+            #17233c
+        );
+}
+
+
+/* لمعة الزجاج */
+
+.buttons button::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    left:-45px;
+    top:-45px;
+
+    background:rgba(255,255,255,.40);
+
+    border-radius:50%;
+
+    filter:blur(18px);
+
+    pointer-events:none;
+}
+
+
+/* =========================
+   Hover
+========================= */
+
+.buttons button:hover{
+
+    transform:translateY(-5px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(93,15,15,.96),
+            rgba(23,35,60,.98)
+        );
+
+    color:white;
+
+    border-color:#5d0f0f;
+
+    box-shadow:
+        0 10px 25px rgba(23,35,60,.20);
+}
+
+
+/* =========================
+   الضغط
+========================= */
+
+.buttons button:active{
+
+    transform:translateY(-1px) scale(.98);
+}
+
+
+/* =========================
+   الهاتف
+========================= */
+
+@media(max-width:600px){
+
+    header{
+
+        padding:65px 20px 22px;
+    }
+
+
+    header h1{
+
+        font-size:23px;
+    }
+
+
+    header button{
+
+        position:static;
+
+        display:inline-block;
+
+        margin-bottom:10px;
+
+        padding:8px 15px;
+    }
+
+
+    .buttons{
+
+        width:90%;
+
+        grid-template-columns:1fr;
+
+        gap:14px;
+
+        margin:28px auto;
+    }
+
+
+    .buttons button{
+
+        min-height:58px;
+
+        padding:13px 16px;
+
+        font-size:16px;
+
+        border-radius:13px;
+    }
+
+}
+
+/* =========================================
+   الشريط السفلي
+========================================= */
+
+.quote-bar{
+
+    width:100%;
+
+    margin-top:auto;
+
+    padding:25px 20px;
+
+    background:#17233c;
+
+    color:white;
+
+    text-align:center;
+
+    border-top:3px solid #5d0f0f;
+
+}
+
+
+/* =========================================
+   العبارة العربية
+========================================= */
+
+.quote-bar{
+
+    width:100%;
+
+    margin-top:auto;
+
+    padding:25px 20px;
+
+    background:#17233c;
+
+    color:white;
+
+    text-align:center;
+
+    border-top:3px solid #5d0f0f;
+
+    position:relative;
+
+}
+
+
+/* الزخرفة تحت العبارة */
+
+.quote-bar::after{
+
+    content:"✒──────────────";
+
+    display:block;
+
+    color:#5d0f0f;
+
+    font-size:14px;
+
+    letter-spacing:3px;
+
+    margin-top:5px;
+
+}
+
+
+.quote-bar span{
+
+    font-family:"Amiri","Noto Naskh Arabic","Traditional Arabic",serif;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    line-height:1.8;
+
+}
+
+.book-decoration{
+    width:30px;
+    height:22px;
+    margin:0 auto 4px;
+    opacity:.85;
+}
+
+.book-decoration svg{
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+
+/* =========================
+   شعار أهل العزم
+========================= */
+
+.logo{
+
+    position:absolute;
+
+    right:25px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:95px;
+
+    height:95px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:3;
+
+}
+
+
+.logo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+}
