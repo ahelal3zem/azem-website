@@ -758,67 +758,43 @@ footer{
 
 }
 
-/* شعار أهل العزم */
-.logo {
-    position: absolute;
-    right: 25px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
+/* =========================
+   شعار أهل العزم
+========================= */
+
+.logo{
+
+    position:absolute;
+
+    right:25px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:58px;
+
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:3;
+
 }
 
-.logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
 
-/* الهاتف */
-@media (max-width: 600px) {
-    .logo {
-        position: static;
-        transform: none;
-        width: 58px;
-        height: 58px;
-        margin: auto;
-    }
-}
+.logo img{
 
-@media (max-width: 600px) {
+    width:100%;
 
-    header {
-        position: relative;
-        min-height: 100px;
-        padding: 15px 80px 15px 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+    height:100%;
 
-    .logo {
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 58px;
-        height: 58px;
-        margin: 0;
-    }
+    object-fit:contain;
 
-    .logo img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
+    display:block;
 
-    .header-title {
-        width: 100%;
-        text-align: center;
-    }
 }
